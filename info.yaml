@@ -1,7 +1,7 @@
 # Tiny Tapeout project information
 project:
   title:        "Moving average Digital Low pass filter (IEEE open silicon)"      # Project title
-  author:       "Aditya"      # Your name
+  author:       "Aditya Panigrahi"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "A Moving Average Filter is a specific type of Finite Impulse Response (FIR) filter where all N coefficients are equal to 1/N. It is widely used in digital signal processing (DSP) to reduce high-frequency noise from a signal while maintaining a sharp response to step changes in the time domain"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
