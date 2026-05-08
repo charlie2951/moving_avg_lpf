@@ -25,7 +25,9 @@ module tt_um_lpf_ieee (
     wire _unused = &{ena, uio_in[7:4], 1'b0};
 
     wire [11:0] din = {uio_in[3:0],ui_in};
-    wire [11:0] dout = {uio_out[7:4],uo_out};
+    wire [11:0] dout;
+    assign uio_out[7:4] = dout[11:8];
+    assign uo_out = dout[7:0];
 
 //Instantiate Filter module
     low_area_lpf filter0(
