@@ -20,7 +20,7 @@ The filter effectively removes high-frequency noise by averaging the last $N$ sa
 | Parameter | Value |
 | :--- | :--- |
 | **Data Width** | 12-bit |
-| **Tap Count (N)** | 8 (Configurable) |
+| **Tap Count (N)** | 8  |
 | **Architecture** | Recursive Accumulator |
 | **Multipliers** | 0 (Shift-only scaling) |
 | **Latent Delay** | $(N-1)/2$ cycles |
@@ -57,15 +57,8 @@ Data Injection: Program the MCU to generate the noisy sine wave values mathemati
 
 Clocking: Ensure the MCU and your filter share a common ground.
 
-Logic Analyzer: Use a low-cost USB Logic Analyzer (like a Saleae or an inexpensive clone) to capture the 12-bit output pins. Most logic analyzer software can "plot" the bus values as a waveform, allowing you to see the filtered sine wave on your PC screen.
-### VIO (Virtual I/O) & ILA (Integrated Logic Analyzer)
-If you are testing this on a Xilinx FPGA (like the Nexys or Arty boards) before submitting to Tiny Tapeout, you can test it entirely inside the chip without external wires.
+Logic Analyzer: Use a low-cost USB Logic Analyzer to capture the 12-bit output pins. Most logic analyzer software can "plot" the bus values as a waveform, allowing you to see the filtered sine wave on your PC screen.
 
-VIO Core: Use the Xilinx VIO IP to manually "force" input values or toggle the reset from your computer via JTAG.
-
-ILA Core: Probe the data_in and data_out signals.
-
-Waveform Viewer: In Vivado, you can right-click the ILA bus and select "Show as Chart." This provides a real-time graph of your signal filtering directly within the IDE
 ## External hardware
 
-MCU or FPGA to provide input and to collect the output. Output may be displayed thriugh logic analyzer.
+MCU or FPGA to provide input and to collect the output. Output may be displayed through logic analyzer.
