@@ -55,8 +55,8 @@ async def test_project(dut):
         # Wait for the next clock cycle
         await RisingEdge(dut.clk)
         # Accessing the .value attribute is key
-        in_val = int(((dut.uio_in.value & 0xF) << 8) | (dut.ui_in.value & 0xFF))
-        out_val = int((((dut.uio_out.value >> 4) & 0xF) << 8) | (dut.uo_out.value & 0xFF))
+        in_val = int(((dut.uio_in.value.integer & 0xF) << 8) | (dut.ui_in.value.integer & 0xFF))
+        out_val = int((((dut.uio_out.value.integer >> 4) & 0xF) << 8) | (dut.uo_out.value.integer & 0xFF))
         # Method B: Recommended Logging (includes simulation time)
         dut._log.info(f"In: {in_val:4d} | Out: {out_val:4d}")
         
