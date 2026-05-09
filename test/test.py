@@ -51,7 +51,7 @@ async def test_project(dut):
             combined_val = 0
         # Drive the input
         dut.ui_in.value = combined_val & 0xFF
-        dui.uio_in.value = (combined_val >> 8) & 0xF
+        dut.uio_in.value = (combined_val >> 8) & 0xF
         # Wait for the next clock cycle
         await RisingEdge(dut.clk)
         # Accessing the .value attribute is key
